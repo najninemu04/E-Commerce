@@ -1,14 +1,15 @@
-import { createRoot } from 'react-dom/client'
+import { createRoot } from 'react-dom/client';
+import { Provider } from 'react-redux';
 import "slick-carousel/slick/slick.css";
-import './index.css'
-import App from './App.jsx'
-import { ContextApi } from './components/ContextApi.jsx'
-import { Provider } from 'react-redux'
-import store from './store.js';
+import App from './App.jsx';
+import { ContextApi } from './components/ContextApi.jsx';
+import './index.css';
+import Store from './store.js';
+
 
 createRoot(document.getElementById('root')).render(
-  <Provider store={store}>
-    <ContextApi>
+  <Provider >
+    <ContextApi store={Store}>
       <App />
     </ContextApi>
   </Provider>
